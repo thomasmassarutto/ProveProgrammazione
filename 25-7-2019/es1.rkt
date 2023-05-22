@@ -22,13 +22,13 @@
      )))
 
 (define best;; return list
-  (lambda (lstu lstv);; list(list), 
-    (cond
+  (lambda (lstu lstv);; list(list)
+    (cond;; controlla quale sia il migliore 
       ((> (string-length (car lstv)) (string-length (car lstu)))
          lstv)
        ((< (string-length (car lstv)) (string-length (car lstu)))
          lstu )
-      (else
+      (else;; altrimenti rigenerea la lista con stringa piu lunga
        (list (car lstu) (car lstv))
        )
      );; cond

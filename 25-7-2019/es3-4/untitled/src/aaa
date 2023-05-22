@@ -1,0 +1,31 @@
+Completa il programma nel riquadro, che applica la tecnica top-down di memoization per realizzare una
+versione più efficiente di manhattan3D.
+Modifica solo gli spazi ............
+La classe counter è gia stata implementata correttamente
+
+public static long manhattan3D( int i, int j, int k ) { // i, j, k ≥ 0
+ Counter v = new Counter();
+ h ............ = new ............;
+............
+............
+............
+............
+ mem( i, j, k, v, h );
+ return v.count();
+ }
+ private static void mem( int i, int j, int k, Counter v, ............ h ) {
+ if ( ............ == UNKNOWN ) {
+ if ( (i == 0) && (j == 0) && (k == 0) ) {
+ v.incr(); h ............ = 1;
+ } else {
+ long n = v.count();
+ if ( i > 0 ) { mem( ............ ); }
+ if ( j > 0 ) { mem( ............ ); }
+ if ( k > 0 ) { mem( ............ ); }
+ h ............ = ............;
+ }
+ } else {
+ v.add( h ............ );
+ }
+ }
+ private static final long UNKNOWN = -1;
