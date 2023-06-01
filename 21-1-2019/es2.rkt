@@ -6,17 +6,18 @@
     (cond ((string=? s "")
            t)
           
-          (;;;
+          ((string=? t "")
            (string-append "/" (xlcs (substring s 1) t)))
           
           ((char=? (string-ref s 0) (string-ref t 0))
            (string-append "*" (xlcs (substring s 1) (substring t 1))))
           
           (else
-           (better (string-append ;;; )
-                   (string-append ;;; )
+           (better (string-append (xlcs (substring s 1) t) (substring s 0 1) )
+                   (string-append (xlcs s (substring t 1)) (substring t 0 1))
                    ))
           )))
+    
 (define better
   (lambda (u v)
     (if (< (stars u) (stars v))
@@ -35,3 +36,5 @@
               (+ n 1)
               n)
  ))))
+
+(xlcs "ar" "at")
