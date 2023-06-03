@@ -13,8 +13,8 @@
            (string-append "*" (xlcs (substring s 1) (substring t 1))))
           
           (else
-           (better (string-append (xlcs (substring s 1) t) (substring s 0 1) )
-                   (string-append (xlcs s (substring t 1)) (substring t 0 1))
+           (better (string-append (substring s 0 1) (xlcs s (substring t 1))  )
+                   (string-append (substring t 0 1) (xlcs (substring s 1) t)  )
                    ))
           )))
     
@@ -37,4 +37,12 @@
               n)
  ))))
 
-(xlcs "ar" "at")
+(xlcs "" "")
+(xlcs "" "ma")
+(xlcs "ma" "") 
+(xlcs "ma" "ma")
+
+(xlcs "arto" "atrio")
+(xlcs "atrio" "arto")
+(xlcs "flora" "lira")
+(xlcs "cincia" "piani")
