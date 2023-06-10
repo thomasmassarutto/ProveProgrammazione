@@ -25,8 +25,7 @@
 (define add-leftmost-tiles
   (lambda (tiles) ; tiles: lista di caratteri: puo essere (B) o (R, B)
    (lambda (tassellation)
-     (cons tiles tassellation); aggiunge i tiles alla tassellazione gia presente
+     (append tiles tassellation); aggiunge i tiles alla tassellazione gia presente
     )))
 
 (R-B-tessellations 4)
-;; parzialmente corretto credo: output (list (list xx) (list yy)) 
