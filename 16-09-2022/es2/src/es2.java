@@ -24,19 +24,20 @@ public class es2 {
 
     public static String lpsDP( String s ) {
         int n = s.length();
-        String[][] mem = new String[n +1][n +1];
+        String[]mem = new String[n +1];
 
         for ( int k=0; k<=n; k=k+1 ) {
             for ( int i=0; i<=n-k; i=i+1 ) {
                 if ( k < 2 ) {
-                mem[k][i]= s.substring(i, i+k);
+                mem[k]= s.substring(i, k);
+
                 } else if ( s.charAt(i) == s.charAt(i+k-1) ) {
-                    mem[k][i]= s.charAt(i) + mem[k-1][i-1];
+                    mem[k]= s.charAt(i) + mem[k-1];
                 } else {
-                    mem[k][i]= longer( mem[k-1][i], mem[k-2][i] );
+                    mem[k]= longer( mem[k-1], mem[k-2] );
                 }
             }}
-        return mem[n][0];
+        return mem[n];
     }
 
 
